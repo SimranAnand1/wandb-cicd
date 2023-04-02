@@ -35,6 +35,7 @@ def compare_runs(entity='simran_anand',
         panels=[wr.RunComparer(diff_only='split', layout={'w': 24, 'h': 15}),]
     )
     report.blocks = report.blocks[:1] + [pg] + report.blocks[1:]
+    
     report.save()
 
     if os.getenv('CI'): # is set to `true` in GitHub Actions https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables
